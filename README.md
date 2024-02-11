@@ -22,6 +22,8 @@ schema
 
 All files in the `queries` and `mutations` folders will be resolvers. The file name will be converted to lower camel case and the extension will be removed.
 
+`schema/queries/post.ts`:
+
 ```ts
 import { Post } from "../types/post";
 
@@ -32,6 +34,13 @@ export default function resolver(_, { id }, context): Post {
 }
 ```
 
+becomes:
+
+```gql
+type Query {
+  post(id: ID!): Post!
+}
+```
 
 ## Types
 
